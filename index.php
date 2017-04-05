@@ -2,6 +2,7 @@
 <body>
 <?php
 echo "<h1> Welcome to Metube! </h1>";
+#comment
 ?>
 
 <form action="login.php" method="post">
