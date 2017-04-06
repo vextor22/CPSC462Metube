@@ -86,6 +86,10 @@ function register_new_user($username, $password, $firstName, $lastName, $age){
 		die ("Could not insert into the database: <br />". mysql_error());	
 }
 
+function get_account_info(){
+
+}
+
 function other()
 {
 	//You can write your own functions here.
