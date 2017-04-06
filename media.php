@@ -9,6 +9,12 @@
 <title>Media</title>
 <script src="Scripts/AC_ActiveX.js" type="text/javascript"></script>
 <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+
+
+<link href="http://vjs.zencdn.net/5.19.1/video-js.css" rel="stylesheet">
+
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 
 <body>
@@ -32,23 +38,25 @@ if(isset($_GET['id'])) {
 	else //view movie
 	{	
 ?>
-	<!-- <p>Viewing Video:<?php echo $result_row[2].$result_row[1];?></p> -->
-	<p>Viewing Video:<?php echo $result_row[4];?></p>
+    <!-- <p>Viewing Video:<?php echo $result_row[2].$result_row[1];
+?></p> -->
+    <p>Viewing Video:<?php echo $result_row[4];
+
+                                echo $type;
+                                echo substr($type,0,5);
+    ?></p>
 	      
-    <object id="MediaPlayer" width=320 height=286 classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95" standby="Loading Windows Media Player components…" type="application/x-oleobject" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
 
-<param name="filename" value="<?php echo $result_row[4];?>">
-	<!-- echo $result_row[2].$result_row[1];  -->
-		
+<video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+   data-setup="{}">
+   <source src="<?php echo $result_row[4];?>" type='<?php echo $type;?>'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
 
-<param name="Showcontrols" value="True">
-<param name="autoStart" value="True">
-
-<embed type="application/x-mplayer2" src="<?php echo $filepath;  ?>" name="MediaPlayer" width=320 height=240></embed>
-
-</object>
-
-          
+  <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>  
           
           
        

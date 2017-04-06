@@ -6,6 +6,20 @@ session_start();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Media Upload</title>
+
+<style> 
+
+input, textarea{
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+textarea:focus{
+    
+}
+
+</style>
+
 </head>
 
 <body>
@@ -16,7 +30,19 @@ session_start();
   <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
    Add a Media: <label style="color:#663399"><em> (Each file limit 10M)</em></label><br/>
    <input  name="file" type="file" size="50" />
-  
+    <br>
+
+    <label for="title">Title</label>
+    <br>
+    <input id="title" name="title" type="text" />
+    <br>
+    <label for="description">Description</label><br>
+    <textarea name="description"  id="description" rows="20" cols="80" placeholder="Enter Description here..."></textarea> 
+    <br>
+
+    <label for="keywords">Keywords</label><br>
+    <input name="keywords" id="keywords" type="text" />
+    <br>
 	<input value="Upload" name="submit" type="submit" />
   </p>
  
