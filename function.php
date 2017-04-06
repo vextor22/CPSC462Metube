@@ -11,15 +11,11 @@ function user_exist_check ($username, $password){
 	else {
 		$row = mysql_fetch_assoc($result);
 		if($row == 0){
-			$query = "insert into account values ('$username','$password')";
-			echo "insert query:" . $query;
-			$insert = mysql_query( $query );
-			if($insert)
-				return 1;
-			else
-				die ("Could not insert into the database: <br />". mysql_error());		
+		#Return 1 if the username does not exist
+			return 1;
 		}
 		else{
+		#return 2 if the username exists
 			return 2;
 		}
 	}
@@ -78,6 +74,16 @@ function upload_error($result)
 	case 7:
 		return  "Upload file failed";
 	}
+}
+
+function register_new_user($username, $password, $firstName, $lastName, $age){
+	$query = "insert into account values ('$username','$password', '$firstName', '$lastName', '$age', NULL)";
+	echo "insert query:" . $query;
+	$insert = mysql_query( $query );
+	if($insert)
+		return 1;
+	else
+		die ("Could not insert into the database: <br />". mysql_error());	
 }
 
 function other()
