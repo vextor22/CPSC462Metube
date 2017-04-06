@@ -6,7 +6,6 @@ session_start();
 <head>
 
 <?php include('nav-bar.php') ?>
-<link rel="stylesheet" href="./css/bootstrap.min.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Media Upload</title>

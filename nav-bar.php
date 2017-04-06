@@ -1,4 +1,9 @@
-<link rel="stylesheet" href"./css/bootstrap.min.css" >
+
+<link rel="stylesheet" href="./css/bootstrap.min.css" >
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -9,15 +14,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="browse.php">MeTube</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li ><a href="#">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -36,7 +41,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="index.php">Sign In</a></li>
       </ul>
     </div>
   </div>
