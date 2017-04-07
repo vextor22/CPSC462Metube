@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="./css/bootstrap.min.css" >
+<link rel="stylesheet" href="css/bootstrap.min.css" >
 <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -24,8 +24,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
+            <li><a href="profile.php">View Profile</a></li>
+            <li><a href="profile_update.php">Update Profile</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
