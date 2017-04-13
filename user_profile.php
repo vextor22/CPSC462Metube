@@ -15,6 +15,13 @@ include_once "function.php";
 
 <?php 
 	$username = $_POST['username'];
+
+	#if the user clicked on thier own username, bring them to profile.php
+	#here incase i add the button to update profile on that page
+	#dont know if ill remeber to do this though
+	if ($username == $_SESSION['username']){
+		header("Location: profile.php");
+	}
 #	echo $username;
 	$query = "SELECT firstName, lastname, age, aboutMe FROM account WHERE username='$username'";
 	$result = mysql_query($query);

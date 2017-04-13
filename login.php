@@ -1,8 +1,14 @@
+<head>
+	<title>Login</title>
+</head>
+
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <?php
 session_start();
 
 include_once "function.php";
+
+include('nav-bar.php');
 
 if(isset($_POST['submit'])) {
 		if($_POST['username'] == "" || $_POST['password'] == "") {

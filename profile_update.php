@@ -1,6 +1,5 @@
 <head>
 	<title>Profile Page</title>
-	<?php include('nav-bar.php')?>
 </head>
 
 <html>
@@ -8,6 +7,7 @@
 <?php
 session_start();
 include_once "function.php";
+include('nav-bar.php');
 
 
 #<!--Getting relevant information from the acount table -->

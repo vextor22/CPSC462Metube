@@ -1,6 +1,5 @@
 <head>
 	<title>Users</title>
-	<?php include('nav-bar.php')?>
 	<script type="text/javascript" src"js/jquery-latest.parck.js"> </script>
 </head>
 
@@ -9,6 +8,8 @@
 	<?php
 		session_start();
 		include_once "function.php";
+		include('nav-bar.php');
+
 	?>
 
 <!--Display all registered users on this page-->
@@ -50,7 +51,7 @@
 		$i = ($i+1) % $maxCols;
 		?>
 
-			
+		<!--Each block with a useranme is its own form, meaning thateach needs a unique identifier-->		
 		<form method="post" id="userForm<?php echo $user;?>" action="user_profile.php">
 			<input type="hidden" name="username" value="<?php echo $user; ?>" />
 		</form>
