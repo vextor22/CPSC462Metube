@@ -86,8 +86,17 @@ function register_new_user($username, $password, $firstName, $lastName, $age){
 		die ("Could not insert into the database: <br />". mysql_error());	
 }
 
-function get_account_info(){
+function user_profile_update($username, $firstName, $lastname, $age, $aboutMe){
+	
+	$query = "UPDATE account SET firstName='$firstName', lastname='$lastname', age='$age', aboutMe='$aboutMe' WHERE username='$username'";
 
+	$insert = mysql_query($query);
+	if($insert){
+		return 1;
+	}
+	else{
+		return 2;
+	}
 }
 
 function other()

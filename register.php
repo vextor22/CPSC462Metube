@@ -5,6 +5,7 @@
 session_start();
 
 include_once "function.php";
+include('nav-bar.php');
 
 if(isset($_POST['submit'])) {
 	if( $_POST['passowrd1'] != $_POST['passowrd2']) {

@@ -27,13 +27,6 @@ function saveDownload(id)
 </head>
 
 <body>
-<p>Welcome <?php echo $_SESSION['username'];?></p>
-
-<!--To Profile section-->
-<form method="post" action="<?php echo "profile.php"; ?>">
-<input name="profile" type="submbit" value="Profile">
-</form>
-<!-- -->
 
 <a href='media_upload.php'  style="color:#FF9900;">Upload File</a>
 <div id='upload_result'>
