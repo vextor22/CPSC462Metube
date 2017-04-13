@@ -2,6 +2,8 @@
 	<title>Login</title>
 </head>
 
+<link rel="stylesheet" href="css/bootstrap.min.css" >
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <?php
 session_start();

@@ -31,18 +31,18 @@ function saveDownload(id)
 
 <?php
     $searchWords = explode(" ", $_POST["keyword"]);
-    echo count($searchWords);
-	$query = "SELECT * from media where keywords RLIKE '$searchWords[0]'"; 
-    for($i = 0; $i < count($searchWords); $i++){
-        
+	$query = "SELECT * from media where keywords RLIKE '$searchWords[0]"; 
+    for($i = 1; $i < count($searchWords); $i++){
+        $query .= "|$searchWords[$i]"; 
     }
+    $query .= "'";
 	$result = mysql_query( $query );
 	if (!$result){
-	   die ("No results found");
+	   die ("No results found $query");
 	}
 ?>
     
-        <div style="background:#339900;color:#FFFFFF; width:150px;">Media found similar to: <?php echo $searchWord; ?></div>
+        <div style="background:#339900;color:#FFFFFF; width:150px;">Media found similar to: <?php echo $_POST["keyword"]; ?></div>
 	<table width="50%" cellpadding="0" cellspacing="0">
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
