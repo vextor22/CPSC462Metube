@@ -57,8 +57,7 @@ if (isset($_SESSION['username'])) {?>
 	?>
 	<label for="channel">Channel Name</label>
 	<br>
-	<select name="channel" id="select">
-	<option value="">              </option>
+	<select name="channel" id="channel">
 	<option value="newChannel">New Channel</option>
 	<?php
 	while($result_row = mysql_fetch_row($result)) { 
@@ -68,9 +67,9 @@ if (isset($_SESSION['username'])) {?>
 	} ?>
 	</select>
 	<label for="newChannel">New Channel Name: </label>
-	<input id="nchannel" disabled="true" type="text" />
+	<input id="nchannel" name="nchannel" disabled="true" type="text" />
 	<script>
-		document.getElementById('select').addEventListener('change', function(){
+		document.getElementById('channel').addEventListener('change', function(){
 			if(this.value == "newChannel") {
 				document.getElementById('nchannel').disabled = false;
 			}
