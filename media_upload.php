@@ -31,14 +31,6 @@ form {
 
 <body>
 
-<!--Script to make anothe textbox appear so that a new chanel can be created-->
-<script type="text/javascript">
-	function showField(channelName) {
-		if(name == 'newChannel')document.getElementById('newBox').innerHTML='Channel Name: <input type="text" name="channel" />;
-		else document.getElementById('newBox').innerHTML='';
-	}
-</script>
-
 <div id="centerer">
 <?php 
 if (isset($_SESSION['username'])) {?>
@@ -65,17 +57,28 @@ if (isset($_SESSION['username'])) {?>
 	?>
 	<label for="channel">Channel Name</label>
 	<br>
-	<select name="channel">
+	<select name="channel" id="select">
 	<option value="">              </option>
+	<option value="newChannel">New Channel</option>
 	<?php
 	while($result_row = mysql_fetch_row($result)) { 
 		$channelTitle = $result_row[1];?>
 		<option value="<?php echo $channelTitle;?>"><?php echo $channelTitle?></option>	
     	<?php
 	} ?>
-	<option value="newChannel"> New Channel</option>
 	</select>
-	<div id="newBox"></div>
+	<label for="newChannel">New Channel Name: </label>
+	<input id="nchannel" disabled="true" type="text" />
+	<script>
+		document.getElementById('select').addEventListener('change', function(){
+			if(this.value == "newChannel") {
+				document.getElementById('nchannel').disabled = false;
+			}
+			else {
+				document.getElementById('nchannel').disabled = true;
+			}
+		});
+	</script>
     <br>
     <label for="keywords">Keywords</label><br>
     <input name="keywords" id="keywords" type="text" />
