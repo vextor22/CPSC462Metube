@@ -28,6 +28,11 @@ include('nav-bar.php')
 		$aboutMe = $row[3];
 	}
 ?>
+<!-- 
+<form> 
+<button onclick=
+-->
+
 <h1><?php echo $first;?> <?php echo $last;?>'s Profile Page</h1>
 
 <p>
