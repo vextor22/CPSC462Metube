@@ -21,19 +21,44 @@ $description = $result_row[3];
 
 #getting the media list
 $query = "SELECT * FROM channelmedia JOIN channel WHERE channel.channelid = channelmedia.channelid AND channel.channelid='$channelid';";
-$result = mysql_query($query)
+$channelResult = mysql_query($query)
 	or die ("The channel requested does not exist or has no content to display".mysql_error());
 
 ?>
 
 <?php
-if (isset($_POST['sub']){
-	$query = "INSERT INTO subsctiptions VALUES(NULL, '$channelid', '$_SESSION['username']')";
-	$result = mysql_query($query)
-		or die ("Could not add subscription".mysql_error());
+if (isset($_POST['sub'])){
+	$username = $_SESSION['username'];
+
+	#check to make sure you are not already subscribed
+	$query = "SELECT * FROM subscriptions WHERE channelid='$channelid' AND username='$username'";
+	$checkQuery = mysql_query($query);
+	$checkRow = mysql_fetch_row($checkQuery);
+	if($checkRow == NULL){
+		$query = "INSERT INTO subscriptions VALUES(NULL, '$channelid', '$username')";
+		$postResult = mysql_query($query)
+			or die ("Could not add subscription".mysql_error());
+	}
+	else {
+		echo "You are already subscribed!";
+	}
 
 }
-if (isset($_POST['unsub']){
+if (isset($_POST['unsub'])){
+	$username = $_SESSION['username'];
+
+	#check to make sure you are not already subscribed
+	$query = "SELECT * FROM subscriptions WHERE channelid='$channelid' AND username='$username'";
+	$checkQuery = mysql_query($query);
+	$checkRow = mysql_fetch_row($checkQuery);
+	if($checkRow == NULL){
+		echo "You are not subscribed.";		
+	}
+	else {
+		$query = "DELETE FROM subscriptions WHERE channelid='$channelid' AND username='$username'";
+		$postResult = mysql_query($query)
+			or die ("Could not remove subscription.".mysql_error());
+	}
 
 }
 
@@ -48,7 +73,7 @@ if (isset($_POST['unsub']){
 </form>
 <table class="table table-hover">
 	<?php
-	while($result_row = mysql_fetch_row($result)){
+	while($result_row = mysql_fetch_row($channelResult)){
 	//chmedid channelid mediaid channelid channelTitle username description
 		$mediaid = $result_row[2];
 
