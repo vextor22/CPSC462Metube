@@ -35,6 +35,10 @@ include('nav-bar.php')
 
 <h1><?php echo $first;?> <?php echo $last;?>'s Profile Page</h1>
 
+<div class="btn-group">
+	<a href="./channels.php" class="btn btn-default">Channels</a>
+</div>
+
 <p>
 Name: <?php echo $first;?> <?php echo $last;?> <br>
 Age: <?php echo $age;?><br>
@@ -56,13 +60,15 @@ About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
 			$mediaId = $result_row[3];
 			$filename = $result_row[0];
 			$path = $result_row[4]; ?>
-
+		<tr>
 		<td style="text-align:center">
-			<a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $filename;?></a>	
-	</table>
+			<a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $filename;?></a>
+		</td>
+		</tr>	
 
 	<?php
 	}?>
+	</table>
 
 </body>
 </html>
