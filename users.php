@@ -20,16 +20,6 @@
 		$query = "SELECT username FROM account";
 		$result = mysql_query( $query );
 		
-#		while($result_row = mysql_fetch_row($result)){
-#			$user = $result_row[0];
-#			echo $user;
-#		}
-#		$user_array = mysql_fetch_array($result);
-#		$numUsers = count($user_array);
-		
-#		for ($i=0; $i <= $numUsers; $i++){
-#			echo "<tr><td>".$user_array[$i]."</td></tr>";
-#		}
 	?>
 
 	<table style="table-layout:fixed;" class="table table-hover">

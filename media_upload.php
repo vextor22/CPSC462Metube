@@ -67,14 +67,19 @@ if (isset($_SESSION['username'])) {?>
 	} ?>
 	</select>
 	<label for="newChannel">New Channel Name: </label>
-	<input id="nchannel" name="nchannel" disabled="true" type="text" />
+	<input id="nchannel" name="nchannel" disabled="true" type="text" /><br>
+	<label for"channelDesc">Channel Description</label><br>
+	<textarea name="channelDesc"  id="channelDesc" rows="5" cols="40" disabled="true" placeholder="Enter Description here..."></textarea> 
+
 	<script>
 		document.getElementById('channel').addEventListener('change', function(){
 			if(this.value == "newChannel") {
 				document.getElementById('nchannel').disabled = false;
+				document.getElementById('channelDesc').disabled = false;
 			}
 			else {
 				document.getElementById('nchannel').disabled = true;
+				document.getElementById('channelDesc').disabled = true;
 			}
 		});
 	</script>
