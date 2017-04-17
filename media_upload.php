@@ -58,13 +58,16 @@ if (isset($_SESSION['username'])) {?>
 	<label for="channel">Channel Name</label>
 	<br>
 	<select name="channel" id="channel">
-	<option value="newChannel">New Channel</option>
+	<option value="none"></option>
 	<?php
 	while($result_row = mysql_fetch_row($result)) { 
 		$channelTitle = $result_row[1];?>
 		<option value="<?php echo $channelTitle;?>"><?php echo $channelTitle?></option>	
     	<?php
 	} ?>
+
+	<option value="newChannel">New Channel</option>
+
 	</select>
 	<label for="newChannel">New Channel Name: </label>
 	<input id="nchannel" name="nchannel" disabled="true" type="text" /><br>

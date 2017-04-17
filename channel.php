@@ -26,9 +26,26 @@ $result = mysql_query($query)
 
 ?>
 
+<?php
+if (isset($_POST['sub']){
+	$query = "INSERT INTO subsctiptions VALUES(NULL, '$channelid', '$_SESSION['username']')";
+	$result = mysql_query($query)
+		or die ("Could not add subscription".mysql_error());
+
+}
+if (isset($_POST['unsub']){
+
+}
+
+
+?>
+
 <div style="text-align:center;"><?php echo $channelName;?></div>
 <div style="text-align:center;"><?php echo $description;?></div>
-
+<form action="./channel.php?id=<?php echo $channelid;?>" id="sub" method="post">
+	<input name="sub" type="submit" value="Subscribe">
+	<input name="unsub" type="submit" value="Unsubscribe">
+</form>
 <table class="table table-hover">
 	<?php
 	while($result_row = mysql_fetch_row($result)){

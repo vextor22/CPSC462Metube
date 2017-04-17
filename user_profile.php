@@ -36,6 +36,11 @@
 	}
 ?>
 <h1><?php echo $first;?> <?php echo $last;?>'s Profile Page</h1>
+<form action="channels.php" method="post" id="channels">
+	<input type="hidden" name="username" value="<?php echo $username;?>">
+	<input name="channels" type="submit" value="Channels">
+</form>
+
 
 <p>
 Name: <?php echo $first;?> <?php echo $last;?> <br>
