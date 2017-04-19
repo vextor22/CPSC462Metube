@@ -54,7 +54,7 @@ About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
 
 ?>
 
-	<table>
+	<table width="50%">
 		<?php
 		while($result_row = mysql_fetch_row($result)){
 			$mediaId = $result_row[3];
@@ -67,8 +67,11 @@ About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
             ?>
 		<tr>
 		<td style="text-align:center">
-			<a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $title;?></a>
-		</td>
+            <a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $title;?></a>
+        </td>
+        <td>
+            <a href="delete.php?id=<?php echo $mediaId; ?>"> Delete </a>
+        </td>
 		</tr>	
 
 	<?php
