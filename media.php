@@ -103,7 +103,7 @@ else
         <h3>Comments: </h3> 
 
         <form action="addComment.php" method="post">
-                <textarea class="form-control" rows="3"  name="comment" placeholder="Place a comment!"></textarea>
+                <textarea style="min-width: 500px;" class="form-control" rows="3"  name="comment" placeholder="Place a comment!"></textarea>
             <input type="hidden" name="mediaid" value="<?php echo $mediaID; ?>">
             <input type="hidden" name="username" value="<?php echo $_SESSION['username'];?>">
             <button type="submit" class="btn btn-default"> Submit </button>
