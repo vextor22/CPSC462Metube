@@ -22,6 +22,26 @@
 
 <body>
 <?php
+	#stuff for favorites
+	if (isset($_POST['fav'])){
+		#check to make sure you already not favourited
+		$username = $_SESSION['username'];
+		$query = "SELECT * FROM favorites WHERE mediaid='".$_GET['id']."' AND username='$username'";
+
+		$checkQuery = mysql_query($query);
+		$checkRow = mysql_fetch_row($checkQuery);
+		if($checkRow == NULL){
+			$query = "INSERT INTO favorites VALUES(NULL, '$username', '".$_GET['id']."')";
+			$postResult = mysql_query($query)
+				or die("Could not add favorite".mysql_error());
+		}
+		else {
+			echo "This is already a favorite!";
+		}
+	}
+?>
+
+<?php
 if(isset($_GET['id'])) {
 	$query = "SELECT * FROM media WHERE mediaid='".$_GET['id']."'";
 	$result = mysql_query( $query );
@@ -60,9 +80,6 @@ if(isset($_GET['id'])) {
   </video>
 
   <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>  
-          
-       
-              
 <?php
 	}
 }
@@ -110,5 +127,8 @@ else
 </div>
 </div>
 </div>
+  <form id="favs" method="post">
+	<input name="fav" type="submit" value="Favorite">
+  </form> 
 </body>
 </html>
