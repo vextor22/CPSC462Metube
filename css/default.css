@@ -13,3 +13,23 @@
 	font-weight:bold;
 	margin-right:60%;
 }
+
+.commentBox{
+    text-align: left;
+    display: inline-block;
+    width: 70%;
+    max-width; 500px;
+}
+.centerer{
+    width: 100%;
+    text-align: center;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear{
+    clear: both;
+}

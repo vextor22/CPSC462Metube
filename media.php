@@ -17,6 +17,7 @@
   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
 <?php include('nav-bar.php') ?>
+<link rel="stylesheet" href="css/default.css">
 </head>
 
 <body>
@@ -27,27 +28,26 @@ if(isset($_GET['id'])) {
 	$result_row = mysql_fetch_row($result);
 	
 	//updateMediaTime($_GET['id']);
-	
+	$mediaID = $_GET['id'];
 	$filename=$result_row[0];   ////0, 4, 2
 	$filepath=$result_row[4]; 
 	$type=$result_row[2];
+    $title = $result_row[5];
+    ?>
+    <div style="text-align: center">
+    <div style="text-align: left; display: inline-block">
+    <div>
+        <h3><?php echo $title; ?></h3>
+    </div>
+
+<?php
 	if(substr($type,0,5)=="image") //view image
 	{
-		echo "Viewing Picture:";
-        echo $result_row[4];
-        echo "<br>";
 		echo "<img src='".$filepath."'/>";
 	}
 	else //view movie
 	{	
 ?>
-    <!-- <p>Viewing Video:<?php echo $result_row[2].$result_row[1];
-?></p> -->
-    <p>Viewing Video:<?php echo $result_row[4];
-
-                                echo $type;
-                                echo substr($type,0,5);
-    ?></p>
 	      
 
 <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
@@ -61,7 +61,6 @@ if(isset($_GET['id'])) {
 
   <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>  
           
-          
        
               
 <?php
@@ -74,5 +73,42 @@ else
 <?php
 }
 ?>
+
+
+    <?php
+        $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID";
+         
+        $result = mysql_query( $query );
+        
+            echo "<div>Hello</div>";
+        echo '<div class="centerer">';
+        while($result_row = mysql_fetch_row($result)){
+            $username = $result_row[1];
+            $comment = $result_row[4];
+            $time = $result_row[3];
+
+            $userInfoQuery = "SELECT * FROM account WHERE username='$username'";
+            $userResult = mysql_query($userInfoQuery);
+            $userInfo = mysql_fetch_row($userResult);
+            $userFName = $userInfo[2];
+            $userLName = $userInfo[3];
+            ?>
+            <div class="commentBox">
+            <p class="left"> <?php echo "$userFName $userLName" ?></p>
+            <p class="right"><?php echo $time ?> </p>
+            <div class="clear"></div>
+            <?php echo "<p>".$result_row[4]."</p>"?>;
+
+            </div>
+        <?php
+        } 
+
+
+
+
+    ?>          
+</div>
+</div>
+</div>
 </body>
 </html>
