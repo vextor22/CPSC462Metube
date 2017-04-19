@@ -19,7 +19,7 @@ $query = "select * from media where mediaid='$mediaID'";
 $result = mysql_query( $query );
 if($result){
 $deletePath = mysql_fetch_row($result)[4];
-//unlink($deletePath);
+unlink($deletePath);
 echo "Hello";
 $query = "DELETE media, favorites, playlistmedia, channelmedia FROM media LEFT JOIN favorites ON media.mediaid = favorites.mediaid
         LEFT JOIN playlistmedia  ON media.mediaid = playlistmedia.mediaid
