@@ -31,7 +31,7 @@
 		$i = ($i+1) % $maxCols;
 		?>
 
-		<form method="post" id="catForm<?php echo $fileType;?>" action="user_profile.php">
+		<form method="post" id="catForm<?php echo $fileType;?>" action="category.php">
 			<input type="hidden" name="category" value="<?php echo $fileType; ?>" />
 		</form>
 		<td style="text-align:center">
