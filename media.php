@@ -59,7 +59,7 @@ if(isset($_GET['id'])) {
     <div>
         <h3><?php echo $title; ?></h3>
     </div>
-
+    <div class="mediaWrapper">
 <?php
 	if(substr($type,0,5)=="image") //view image
 	{
@@ -90,14 +90,17 @@ else
 <?php
 }
 ?>
-
+</div>
+<br>
+  <form id="favs" method="post">
+	<input name="fav" type="submit" value="Favorite">
+  </form> 
 
     <?php
         $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID";
          
         $result = mysql_query( $query );
         
-            echo "<div>Hello</div>";
         echo '<div class="centerer">';
         while($result_row = mysql_fetch_row($result)){
             $username = $result_row[1];
@@ -127,8 +130,5 @@ else
 </div>
 </div>
 </div>
-  <form id="favs" method="post">
-	<input name="fav" type="submit" value="Favorite">
-  </form> 
 </body>
 </html>
