@@ -28,7 +28,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="#">Link<span class="sr-only">(current)</span></a></li>
+        <li ><a href="categories.php">Categories<span class="sr-only">(current)</span></a></li>
        	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Media<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
