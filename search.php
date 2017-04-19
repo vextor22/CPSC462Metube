@@ -49,7 +49,11 @@ function saveDownload(id)
 			{ 
 				$mediaid = $result_row[3];
 				$filename = $result_row[0];
-				$filenpath = $result_row[4];
+                $filenpath = $result_row[4];
+                $title = $result_row[5];
+                if(strlen($title) == 0){
+                    $title = $filename;
+                }
 		?>
         	 <tr valign="top">			
 			<td>
@@ -58,7 +62,7 @@ function saveDownload(id)
 					?>
 			</td>
                         <td>
-            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_self"><?php echo $filename;?></a> 
+            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_self"><?php echo $title;?></a> 
                         </td>
                         <td>
             	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>

@@ -46,7 +46,7 @@ function saveDownload(id)
 	   die ("Could not query the media table in the database: <br />". mysql_error());
 	}
 ?>
-    
+<div class="centerer">    
     <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
 	<table width="50%" cellpadding="0" cellspacing="0">
 		<?php
@@ -54,7 +54,11 @@ function saveDownload(id)
 			{ 
 				$mediaid = $result_row[3];
 				$filename = $result_row[0];
-				$filenpath = $result_row[4];
+                $filenpath = $result_row[4];
+                $title = $result_row[5];
+                if(strlen($title) == 0){
+                    $title = $filename;
+                }
 		?>
         	 <tr valign="top">			
 			<td>
@@ -63,7 +67,7 @@ function saveDownload(id)
 					?>
 			</td>
                         <td>
-            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_self"><?php echo $filename;?></a> 
+            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_self"><?php echo $title;?></a> 
                         </td>
                         <td>
             	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
@@ -74,5 +78,6 @@ function saveDownload(id)
 		?>
 	</table>
    </div>
+</div>
 </body>
 </html>
