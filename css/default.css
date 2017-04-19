@@ -17,8 +17,13 @@
 .commentBox{
     text-align: left;
     display: inline-block;
-    width: 70%;
-    max-width; 500px;
+    width: 100%;
+    max-width; 1000px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 5px;
+    margin-top: 8px;
+    
 }
 .centerer{
     width: 100%;
