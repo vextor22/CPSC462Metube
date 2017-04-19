@@ -54,12 +54,12 @@ if(isset($_GET['id'])) {
 	$type=$result_row[2];
     $title = $result_row[5];
     ?>
-    <div style="text-align: center">
+    <div class="centerer">
     <div style="text-align: left; display: inline-block">
-    <div>
-        <h3><?php echo $title; ?></h3>
-    </div>
+
     <div class="mediaWrapper">
+
+        <h3><?php echo $title; ?></h3>
 <?php
 	if(substr($type,0,5)=="image") //view image
 	{
@@ -97,10 +97,18 @@ else
   </form> 
 
     <?php
-        $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID";
+        $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID ORDER BY time DESC";
          
         $result = mysql_query( $query );?>
         <h3>Comments: </h3> 
+
+        <form action="addComment.php" method="post">
+                <textarea style="min-width: 500px;" class="form-control" rows="3"  name="comment" placeholder="Place a comment!"></textarea>
+            <input type="hidden" name="mediaid" value="<?php echo $mediaID; ?>">
+            <input type="hidden" name="username" value="<?php echo $_SESSION['username'];?>">
+            <button type="submit" class="btn btn-default"> Submit </button>
+        </form>
+        <hr />
         <?php
         while($result_row = mysql_fetch_row($result)){
             $username = $result_row[1];
