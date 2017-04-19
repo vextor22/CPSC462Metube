@@ -34,6 +34,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="channels.php">Your Channels</a></li>
             <li><a href="subscriptions.php">Subscriptions</a></li>
+	    <li><a href="favorites.php">Favorites</a></li>
           </ul>
        </li>
 <li><a href="users.php">Users</a></li>
