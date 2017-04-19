@@ -99,9 +99,9 @@ else
     <?php
         $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID";
          
-        $result = mysql_query( $query );
-        
-        echo '<div class="centerer">';
+        $result = mysql_query( $query );?>
+        <h3>Comments: </h3> 
+        <?php
         while($result_row = mysql_fetch_row($result)){
             $username = $result_row[1];
             $comment = $result_row[4];
@@ -117,7 +117,7 @@ else
             <p class="left"> <?php echo "$userFName $userLName" ?></p>
             <p class="right"><?php echo $time ?> </p>
             <div class="clear"></div>
-            <?php echo "<p>".$result_row[4]."</p>"?>;
+            <?php echo "<p>".$result_row[4]."</p>";?>
 
             </div>
         <?php
@@ -127,7 +127,6 @@ else
 
 
     ?>          
-</div>
 </div>
 </div>
 </body>
