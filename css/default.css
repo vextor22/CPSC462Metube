@@ -16,7 +16,7 @@
 
 .commentBox{
     text-align: left;
-    display: inline-block;
+    display: block;
     width: 100%;
     max-width: 700px;
     min-width: 500px;
@@ -50,7 +50,7 @@
 .messageBox{
         
     text-align: left;
-    display: inline-block;
+    display: block;
     width: 100%;
     border: 1px solid gray;
     border-radius: 2px;

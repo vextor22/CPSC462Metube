@@ -13,6 +13,9 @@ include_once "nav-bar.php";
 <body>
 <h3>Messages</h3>
 <hr />
+<div class="centerer">
+
+    <div style="text-align: left; display: inline-block">
 <?php
 $conversationID = $_GET['id'];
 
@@ -52,6 +55,8 @@ while($row_result = mysql_fetch_row($result)){
     <input type="hidden" name="username" value="<?php echo $_SESSION['username'];?>">
     <button type="submit" id="send" class="btn btn-default">Send Message</button>
 </form>
+</div>
+</div>
 </body>
 
 </html>
