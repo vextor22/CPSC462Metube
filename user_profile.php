@@ -18,9 +18,10 @@
 	#if the user clicked on thier own username, bring them to profile.php
 	#here incase i add the button to update profile on that page
 	#dont know if ill remeber to do this though
+    if(isset($_SESSION['username'])){
 	if ($username == $_SESSION['username']){
 		header("Location: profile.php");
-	}
+	}}
 #	echo $username;
 	$query = "SELECT firstName, lastname, age, aboutMe FROM account WHERE username='$username'";
 	$result = mysql_query($query);
@@ -39,10 +40,14 @@
 <form action="channels.php" method="post" id="channels">
 	<button type="hidden" name="username" class="btn btn-default" value="<?php echo $username?>">Channels</button>
 </form>
+<?php
+if(isset($_SESSION['username'])){ 
+?>
 <form action="getConversation.php" method="post" id="conversation">
     <input type="hidden" name="recipient" value="<?php echo $username;?>">
     <button type="submit" class="btn btn-default">Open Conversation</button>
 </form>
+<?php } ?>
 
 <p>
 Name: <?php echo $first;?> <?php echo $last;?> <br>
