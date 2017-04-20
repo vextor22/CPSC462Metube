@@ -100,7 +100,42 @@ else
   	<td style="text-align:right"><a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $filepath;?>)">Download</a></td>
 	</tr>
   </table>
+<?php 
+    $username = $_SESSION['username'];
+  $playlistQuery = "SELECT * FROM playlist where username='$username'";
+    $presult = mysql_query( $playlistQuery );
+?>
+    <form action="createPlaylist.php" method="get">
+	<select required name="title" id="playlist">
+	<option value=""></option>
+	<?php
+	while($presult_row = mysql_fetch_row($presult)) { 
+		$ptitle = $presult_row[1];
+        $pid = $presult_row[0];
+        ?>
+		<option value="<?php echo $ptitle;?>"><?php echo $ptitle?></option>	
+    	<?php
+	} ?>
 
+	<option value="newPlaylist">New Playlist</option>
+
+	</select>
+	<label for="">New Playlist Name: </label>
+	<input id="ptitle" name="ptitle" disabled="true" type="text" /><br>
+    <input type=hidden name="id" value="<?php echo $mediaID; ?>" />
+    <button type="submit" class="btn btn-default"> Submit </button>
+</form>
+
+	<script>
+		document.getElementById('playlist').addEventListener('change', function(){
+			if(this.value == "newPlaylist") {
+				document.getElementById('ptitle').disabled = false;
+			}
+			else {
+				document.getElementById('ptitle').disabled = true;
+			}
+		});
+	</script>
     <?php
         $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID ORDER BY time DESC";
          

@@ -1,10 +1,10 @@
-
+<!--
 <html>
 <link rel="stylesheet" href="css/bootstrap.min.css" >
 <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
 <body>
 <?php
-echo "<h1> Welcome to Metube! </h1>";
+#echo "<h1> Welcome to Metube! </h1>";
 #comment
 ?>
 
@@ -20,3 +20,7 @@ echo "<h1> Welcome to Metube! </h1>";
 
 </body>
 </html>
+-->
+
+
+<meta http-equiv="refresh" content="0;url=browse.php">

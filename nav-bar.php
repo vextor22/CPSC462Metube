@@ -33,7 +33,8 @@
        	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Media<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="channels.php">Your Channels</a></li>
+            <li><a href="channels.php">Your Channels</a></li> 
+            <li><a href="playlists.php">Your Playlists</a></li>
             <li><a href="subscriptions.php">Subscriptions</a></li>
 	    <li><a href="favorites.php">Favorites</a></li>
 	    <li><a href="media_upload.php">Upload Media</a></li>
