@@ -56,19 +56,20 @@ About Me:<br> <textarea readonly style="resize:none;"rows="10" cols="50"><?php e
 
 ?>
 
-	<table>
+	<table width="50%">
 		<?php
 		while($result_row = mysql_fetch_row($result)){
 			$mediaId = $result_row[3];
 			$filename = $result_row[0];
 			$path = $result_row[4]; ?>
-
-		<td style="text-align:center">
-			<a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $filename;?></a>	
-	</table>
-
+		<tr>
+		<td style="text-align:left">
+			<a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $filename;?></a></td>
+		<td><a href="<?php echo $path;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $path;?>);">Download</a></td>	
+		</tr>
 	<?php
 	}?>
+	</table>
 
 
 

@@ -68,7 +68,7 @@ About Me:<br> <textarea readonly style="resize: none;" rows="10" cols="50"><?php
             }
             ?>
 		<tr>
-		<td style="text-align:center">
+		<td style="text-align:left">
             <a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $title;?></a>
         </td>
         <td>
