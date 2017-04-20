@@ -37,8 +37,8 @@
 ?>
 <h1><?php echo $first;?> <?php echo $last;?>'s Profile Page</h1>
 <form action="channels.php" method="post" id="channels">
-	<input type="hidden" name="username" value="<?php echo $username;?>">
-	<input name="channels" type="submit" value="Channels">
+	<button type="hidden" name="username" class="btn btn-default"><?php echo $username;?></button>
+	<button class="btn btn-default" name="channels" type="submit">Channels</button>
 </form>
 
 

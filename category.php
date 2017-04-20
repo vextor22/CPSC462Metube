@@ -26,7 +26,7 @@ $mediaresult = mysql_query($mediaQuery)
 		#get the media title and id
 		$mediaName = $mediaRow[5];
 		$desc = $mediaRow[6];
-		$mediaid = $mediaRow[4];
+		$mediaid = $mediaRow[3];
 	?>
 	<tr>
 	<td style="text-align:left;">

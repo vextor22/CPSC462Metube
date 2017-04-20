@@ -68,8 +68,8 @@ if (isset($_POST['unsub'])){
 <div style="text-align:center;"><?php echo $channelName;?></div>
 <div style="text-align:center;"><?php echo $description;?></div>
 <form action="./channel.php?id=<?php echo $channelid;?>" id="sub" method="post">
-	<input name="sub" type="submit" value="Subscribe">
-	<input name="unsub" type="submit" value="Unsubscribe">
+	<button class="btn btn-default" name="sub" type="submit">Subscribe</button>
+	<button class="btn btn-default" name="unsub" type="submit">Unsubscribe</button>
 </form>
 <table class="table table-hover">
 	<?php
