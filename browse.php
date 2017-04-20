@@ -36,8 +36,10 @@ function saveDownload(id)
 	}
 ?>
 <div class="centerer">    
-    <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
-	<table width="50%" cellpadding="0" cellspacing="0">
+
+    <div style="text-align: left; display: inline-block;">
+    <div><h3>Browse Uploaded Media</h3></div>
+        <hr />
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
@@ -45,28 +47,26 @@ function saveDownload(id)
 				$filename = $result_row[0];
                 $filenpath = $result_row[4];
                 $title = $result_row[5];
+                $description = $result_row[6];
+                $uploadBy = $result_row[1];
                 if(strlen($title) == 0){
                     $title = $filename;
                 }
 		?>
-        	 <tr valign="top">			
-			<td>
-					<?php 
-						echo $mediaid;  //mediaid
-					?>
-			</td>
-                        <td>
-            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_self"><?php echo $title;?></a> 
-                        </td>
-                        <td>
-            	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-                        </td>
-		</tr>
+            <div style="min-width: 500px; max-width: 700px;">
+            <a class="left" href="media.php?id=<?php echo $mediaid;?>" target="_self"><?php echo $title;?></a> 
+            <a class="right" href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+            <p> </p>
+            <div class="clear"></div>
+            <p style="word-break:break-all;"><?php echo $description; ?> </p>
+            <p>Uploaded by: <?php echo $uploadBy ?> </p>
+            <hr style="margin-top: 10px; margin-bottom: 10px;" />
+            </div>
         	<?php
 			}
 		?>
-	</table>
    </div>
+</div>
 </div>
 </body>
 </html>
