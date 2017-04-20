@@ -6,6 +6,7 @@ session_start();
 
 include_once "function.php";
 $title = $_GET['title'];
+$newTitle = $_GET['ptitle'];
 $id = $_GET['id'];
 $username = $_SESSION['username'];
 
@@ -16,16 +17,13 @@ $row_result = mysql_fetch_row( $result );
 if(isset($row_result)){
 
     $playlist = $row_result[0];
-    echo $playlist;
     ?>
 
-<meta http-equiv="refresh" content="0;url=addToPlaylist.php?id=<?php 
-    echo $id."&playlist=".$playlist; ?>"> 
 <?php
-echo "does";
-} else {
+}
 
-echo "doesn't";
+if($title == "newPlaylist"){
+$title = $newTitle;
 $query = "INSERT INTO playlist VALUES (NULL, '$title', '$username')";
 
 mysql_query($query);
@@ -40,8 +38,10 @@ $playlist = $row_result[0];
 
 ?>
 
-<meta http-equiv="refresh" content="0;url=addToPlaylist.php?id=<?php 
-    echo $id."&playlist=".$playlist; ?>">
 
 <?php
 } ?>
+
+
+ <meta http-equiv="refresh" content="0;url=addToPlaylist.php?id=<?php 
+    echo $id."&playlist=".$playlist; ?>">
