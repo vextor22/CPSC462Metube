@@ -1,7 +1,7 @@
 <html>
 
 <head>
-
+<title>Conversation</title>
 <?php
  
 session_start();
@@ -11,6 +11,8 @@ include_once "nav-bar.php";
 </head>
 
 <body>
+<h3>Messages</h3>
+<hr />
 <?php
 $conversationID = $_GET['id'];
 
