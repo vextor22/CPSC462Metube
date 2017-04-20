@@ -75,7 +75,7 @@ if(!file_exists($dirfile))
 
 		$query = "INSERT INTO channelmedia VALUES(NULL, $channelid ,$mediaid);";
 		$query_result = mysql_query($query)
-			or die ("Insert into channel media fails. ".mysql_error());
+			or die ("Insert into channel media fails - needs to be added to channel ".mysql_error());
 
 		
 	}

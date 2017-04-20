@@ -1,8 +1,8 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
 <head>
 
 <?php include('nav-bar.php') ?>
@@ -57,8 +57,8 @@ if (isset($_SESSION['username'])) {?>
 	?>
 	<label for="channel">Channel Name</label>
 	<br>
-	<select name="channel" id="channel">
-	<option value="none"></option>
+	<select required name="channel" id="channel">
+	<option value=""></option>
 	<?php
 	while($result_row = mysql_fetch_row($result)) { 
 		$channelTitle = $result_row[1];?>

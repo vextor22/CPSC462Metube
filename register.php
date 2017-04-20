@@ -1,3 +1,6 @@
+<head>
+<title>Register</title>
+</head>
 <html>
 <body>
 
@@ -11,7 +14,13 @@ if(isset($_POST['submit'])) {
 	if( $_POST['passowrd1'] != $_POST['passowrd2']) {
 		$register_error = "Passwords don't match. Try again?";
 	}
+	elseif (empty($_POST['username'])){
+		$register_error = "You must enter a username. Try again.";
+	}	
 	else {
+		#check to make sure they didnt put in blank username
+
+
 		$check = user_exist_check($_POST['username'], $_POST['passowrd1']);	
 		if($check == 1){
 			//echo "Rigister succeeds";
