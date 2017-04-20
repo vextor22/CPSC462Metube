@@ -15,7 +15,7 @@ $mediaQuery = "SELECT * FROM media where type='$fileType'";
 $mediaresult = mysql_query($mediaQuery)
 	or die ("Could not query the database for that file type".mysql_error());
 ?>
-<div style="text-align:center;"><?php echo $fileType;?> Media</div>
+<div style="text-align:center;font-size:24px;"><?php echo $fileType;?> Media</div>
 <table width="50%" class="table table-hover">
 	<tr>
 	<td style="text-align:left">Media Name</td>
