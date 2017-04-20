@@ -37,8 +37,7 @@
 ?>
 <h1><?php echo $first;?> <?php echo $last;?>'s Profile Page</h1>
 <form action="channels.php" method="post" id="channels">
-	<button type="hidden" name="username" class="btn btn-default"><?php echo $username;?></button>
-	<button class="btn btn-default" name="channels" type="submit">Channels</button>
+	<button type="hidden" name="username" class="btn btn-default" value="<?php echo $username?>">Channels</button>
 </form>
 <form action="getConversation.php" method="post" id="conversation">
     <input type="hidden" name="recipient" value="<?php echo $username;?>">
