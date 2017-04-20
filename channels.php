@@ -49,7 +49,9 @@ include('nav-bar.php')
 	<div style="text-align:center; font-size:24px">
 		<?php echo $username;?>'s Channels
 	</div>
-<table class="table table-hover;">
+	<div style="text-align:right">
+		<a href="addchannel.php" target="_blank">Add Channel</a></div>
+	<table class="table table-hover;">
 
 <?php
 	while($result_row = mysql_fetch_row($result)) {
