@@ -80,8 +80,6 @@ About Me:<br> <textarea readonly style="resize: none;" rows="10" cols="50"><?php
 	}?>
 	</table>
 <hr />
-<p>Previous Conversations:</p>
-
 
 </body>
 </html>
