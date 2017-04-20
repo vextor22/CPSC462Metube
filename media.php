@@ -94,13 +94,18 @@ else
 <br>
   <table>
 	<tr>
+    <?php if(isset($_SESSION['username'])){ ?>
 	<td><form id="favs" method="post">
 		<button class="btn btn-default" name="fav" type="submit">Favorite</button>
   	</form></td> 
+    <?php } ?>
   	<td style="text-align:right"><a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $filepath;?>)">Download</a></td>
 	</tr>
   </table>
 <?php 
+
+    if(isset($_SESSION['username'])){
+
     $username = $_SESSION['username'];
   $playlistQuery = "SELECT * FROM playlist where username='$username'";
     $presult = mysql_query( $playlistQuery );
@@ -137,6 +142,7 @@ else
 		});
 	</script>
     <?php
+        }
         $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID ORDER BY time DESC";
          
         $result = mysql_query( $query );?>
