@@ -11,4 +11,4 @@ $query = "INSERT INTO messages VALUES (NULL, $conversationID, NULL, '$message', 
 mysql_query( $query );
 ?>
 
-<meta http-equiv="refresh" content="0;url=conversation.php?id=<?php echo $conversationID ?>">
+<meta http-equiv="refresh" content="0;url=conversation.php?id=<?php echo $conversationID ?>#send">
