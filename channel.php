@@ -69,8 +69,11 @@ if (isset($_POST['unsub'])){
 <div style="text-align:center;"><?php echo $description;?></div>
 <?php
 #dont show the sub or unsub buttons if the user is the owner of the channel
+$sessUser = "";
+if(isset($_SESSION['username'])){
 $sessUser = $_SESSION['username'];
-if($sessUser == $username){?>
+}
+if($sessUser == $username || !isset($_SESSION['username'])){?>
 <table class="table table-hover">
 	<?php
 	while($result_row = mysql_fetch_row($channelResult)){
