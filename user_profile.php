@@ -45,7 +45,7 @@
 <p>
 Name: <?php echo $first;?> <?php echo $last;?> <br>
 Age: <?php echo $age;?><br>
-About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
+About Me:<br> <textarea readonly style="resize:none;"rows="10" cols="50"><?php echo $aboutMe?></textarea>
 
 </p>
 <p>Uploads by <?php echo $username?></p>

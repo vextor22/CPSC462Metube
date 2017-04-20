@@ -27,17 +27,6 @@ function saveDownload(id)
 </head>
 
 <body>
-
-<a href='media_upload.php'  style="color:#FF9900;">Upload File</a>
-<div id='upload_result'>
-<?php 
-	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
-	{		
-		echo upload_error($_REQUEST['result']);
-	}
-?>
-</div>
-<br/><br/>
 <?php
 
 	$query = "SELECT * from media"; 
