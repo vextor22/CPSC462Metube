@@ -15,7 +15,7 @@ $username = $_SESSION['username'];
 $favQuery = "SELECT * FROM favorites WHERE username='$username'";
 $favResult = mysql_query($favQuery);
 ?>
-<div style="text-align:center;">Favorites List</div>
+<div style="text-align:center; font-size:24px;">Favorites List</div>
 <table width="50%" class="table table-hover">
 	<?php
 	while($favRow = mysql_fetch_row($favResult)){

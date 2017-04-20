@@ -1,5 +1,5 @@
 <head>
-	<title></title>
+	<title>Channel</title>
 </head>
 
 <html>
@@ -65,7 +65,7 @@ if (isset($_POST['unsub'])){
 
 ?>
 
-<div style="text-align:center;"><?php echo $channelName;?></div>
+<div style="text-align:center; font-size:24px;"><?php echo $channelName;?></div>
 <div style="text-align:center;"><?php echo $description;?></div>
 <form action="./channel.php?id=<?php echo $channelid;?>" id="sub" method="post">
 	<button class="btn btn-default" name="sub" type="submit">Subscribe</button>
@@ -88,7 +88,7 @@ if (isset($_POST['unsub'])){
 	?>
 		<tr>
 		<td><a href="media.php?id=<?php echo $mediaid?>" target="_blank"><?php echo $filename;?></a></td>
-		<td><a href="<?php echo $path;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $path;?>);">Download</a></td>
+		<td align="right"><a href="<?php echo $path;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $path;?>);">Download</a></td>
 		</tr>
 	
 	<?php	

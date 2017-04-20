@@ -13,7 +13,7 @@
 	?>
 
 <!--Display all registered users on this page-->
-
+	<div style="text-align:center; font-size:24px">MeTube Users</div>
 	<?php
 		$user_array = array();
 
