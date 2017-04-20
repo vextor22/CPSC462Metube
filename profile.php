@@ -38,6 +38,7 @@ include('nav-bar.php')
 <div class="btn-group">
 	<a href="./channels.php" class="btn btn-default">Channels</a>
 	<a href="./favorites.php" class="btn btn-default">Favorites</a>
+	<a href="./media_upload.php" class="btn btn-default">Upload Media</a>
 </div>
 
 <p>
