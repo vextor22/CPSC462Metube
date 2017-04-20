@@ -37,8 +37,8 @@
 ?>
 <h1><?php echo $first;?> <?php echo $last;?>'s Profile Page</h1>
 <form action="channels.php" method="post" id="channels">
-	<input type="hidden" name="username" value="<?php echo $username;?>">
-	<input name="channels" type="submit" value="Channels">
+	<button type="hidden" name="username" class="btn btn-default"><?php echo $username;?></button>
+	<button class="btn btn-default" name="channels" type="submit">Channels</button>
 </form>
 <form action="getConversation.php" method="post" id="conversation">
     <input type="hidden" name="recipient" value="<?php echo $username;?>">
@@ -48,7 +48,7 @@
 <p>
 Name: <?php echo $first;?> <?php echo $last;?> <br>
 Age: <?php echo $age;?><br>
-About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
+About Me:<br> <textarea readonly style="resize:none;"rows="10" cols="50"><?php echo $aboutMe?></textarea>
 
 </p>
 <p>Uploads by <?php echo $username?></p>
@@ -59,19 +59,20 @@ About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
 
 ?>
 
-	<table>
+	<table width="50%">
 		<?php
 		while($result_row = mysql_fetch_row($result)){
 			$mediaId = $result_row[3];
 			$filename = $result_row[0];
 			$path = $result_row[4]; ?>
-
-		<td style="text-align:center">
-			<a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $filename;?></a>	
-	</table>
-
+		<tr>
+		<td style="text-align:left">
+			<a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $filename;?></a></td>
+		<td><a href="<?php echo $path;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $path;?>);">Download</a></td>	
+		</tr>
 	<?php
 	}?>
+	</table>
 
 
 

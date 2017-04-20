@@ -92,9 +92,14 @@ else
 ?>
 </div>
 <br>
-  <form id="favs" method="post">
-	<input name="fav" type="submit" value="Favorite">
-  </form> 
+  <table>
+	<tr>
+	<td><form id="favs" method="post">
+		<button class="btn btn-default" name="fav" type="submit">Favorite</button>
+  	</form></td> 
+  	<td style="text-align:right"><a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $filepath;?>)">Download</a></td>
+	</tr>
+  </table>
 
     <?php
         $query = "SELECT * FROM commentChains WHERE mediaID=$mediaID ORDER BY time DESC";

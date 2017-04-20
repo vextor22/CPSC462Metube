@@ -38,12 +38,13 @@ include('nav-bar.php')
 <div class="btn-group">
 	<a href="./channels.php" class="btn btn-default">Channels</a>
 	<a href="./favorites.php" class="btn btn-default">Favorites</a>
+	<a href="./media_upload.php" class="btn btn-default">Upload Media</a>
 </div>
 
 <p>
 Name: <?php echo $first;?> <?php echo $last;?> <br>
 Age: <?php echo $age;?><br>
-About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
+About Me:<br> <textarea readonly style="resize: none;" rows="10" cols="50"><?php echo $aboutMe?></textarea>
 
 </p>
 
@@ -67,7 +68,7 @@ About Me:<br> <textarea rows="10" cols="50"><?php echo $aboutMe?></textarea>
             }
             ?>
 		<tr>
-		<td style="text-align:center">
+		<td style="text-align:left">
             <a href="media.php?id=<?php echo $mediaId;?>" target="_self"><?php echo $title;?></a>
         </td>
         <td>

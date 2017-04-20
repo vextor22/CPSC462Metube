@@ -48,11 +48,11 @@ include('nav-bar.php')
 	else { ?>
 
 
+	<div style="text-align:center; font-size:24px">
+		<?php echo $username;?>'s Channels
+	</div>
 <table style="table-layout:fixed;">
 
-	<tr align="center">
-		<th><?php echo $username;?>'s Channels</th>
-	</tr>
 <?php
 	while($result_row = mysql_fetch_row($result)) {
 		$channelName = $result_row[1];

@@ -14,10 +14,9 @@ $query = "SELECT * FROM subscriptions WHERE username='$username'";
 $subsResult = mysql_query($query);
 ?>
 
+<div style="text-align:center; font-size:24px;"><?php echo $username;?>'s Subscriptions</div>
+
 <table style=table-layout:hover;>
-
-	<tr align="center"><th><?php echo $username;?>'s Subscriptions</th></tr>
-
 	<?php
 	while ($subsRow = mysql_fetch_row($subsResult)) {
 		$channelid = $subsRow[1];
