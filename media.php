@@ -106,7 +106,7 @@ else
          
         $result = mysql_query( $query );?>
         <h3>Comments: </h3> 
-
+<?php if(isset($_SESSION['username'])){ ?>
         <form action="addComment.php" method="post">
                 <textarea style="min-width: 500px; max-width: 700px; resize: none;" class="form-control" rows="3"  name="comment" placeholder="Place a comment!"></textarea>
             <input type="hidden" name="mediaid" value="<?php echo $mediaID; ?>">
@@ -115,6 +115,7 @@ else
         </form>
         <hr />
         <?php
+        }
         while($result_row = mysql_fetch_row($result)){
             $username = $result_row[1];
             $comment = $result_row[4];
