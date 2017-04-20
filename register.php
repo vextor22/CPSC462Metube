@@ -14,6 +14,9 @@ if(isset($_POST['submit'])) {
 	if( $_POST['passowrd1'] != $_POST['passowrd2']) {
 		$register_error = "Passwords don't match. Try again?";
 	}
+	elseif(empty($_POST['passowrd1']) && empty($_POST['passowrd2'])){
+		$register_error = "Password field cannot be blank. Try Again.";
+	}
 	elseif (empty($_POST['username'])){
 		$register_error = "You must enter a username. Try again.";
 	}	
