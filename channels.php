@@ -22,12 +22,10 @@ include('nav-bar.php')
 		$query = "SELECT * FROM channel WHERE username='$newUser'";
 		$result = mysql_query($query);?>
 
-
+		<div style="text-align:center; font-size:24px">
+			<?php echo $newUser;?>'s Channels
+		</div>
 		<table style="table-layout:fixed;">
-
-			<tr align="center">
-				<th><?php echo $newUser;?>'s Channels</th>
-			</tr>
 		<?php
 			while($result_row = mysql_fetch_row($result)) {
 				$channelName = $result_row[1];
@@ -51,7 +49,7 @@ include('nav-bar.php')
 	<div style="text-align:center; font-size:24px">
 		<?php echo $username;?>'s Channels
 	</div>
-<table style="table-layout:fixed;">
+<table class="table table-hover;">
 
 <?php
 	while($result_row = mysql_fetch_row($result)) {
@@ -61,6 +59,9 @@ include('nav-bar.php')
 	<tr>
 		<td>
 			<a href=channel.php?id=<?php echo $channelid;?> target="_self"><?php echo $channelName;?></a>
+		</td>
+		<td align="right">
+			<a href="deletechannel.php?id=<?php echo $channelid; ?>"> Delete </a>
 		</td>
 	<tr>
 

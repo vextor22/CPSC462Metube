@@ -67,6 +67,36 @@ if (isset($_POST['unsub'])){
 
 <div style="text-align:center; font-size:24px;"><?php echo $channelName;?></div>
 <div style="text-align:center;"><?php echo $description;?></div>
+<?php
+#dont show the sub or unsub buttons if the user is the owner of the channel
+$sessUser = $_SESSION['username'];
+if($sessUser == $username){?>
+<table class="table table-hover">
+	<?php
+	while($result_row = mysql_fetch_row($channelResult)){
+	//chmedid channelid mediaid channelid channelTitle username description
+		$mediaid = $result_row[2];
+
+		//get the relevant media information
+		$mediaQuery = "SELECT * FROM media WHERE mediaid='$mediaid';";
+		$mediaResult = mysql_query($mediaQuery);
+		$mediaRow = mysql_fetch_row($mediaResult);
+
+		$filename = $mediaRow[0];
+		$type = $mediaRow[2];
+		$path = $mediaRow[4];
+	?>
+		<tr>
+		<td><a href="media.php?id=<?php echo $mediaid?>" target="_blank"><?php echo $filename;?></a></td>
+		<td align="right"><a href="<?php echo $path;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $path;?>);">Download</a></td>
+		</tr>
+
+	<?php
+	} ?>
+</table>
+<?php
+}
+else { ?>
 <form action="./channel.php?id=<?php echo $channelid;?>" id="sub" method="post">
 	<button class="btn btn-default" name="sub" type="submit">Subscribe</button>
 	<button class="btn btn-default" name="unsub" type="submit">Unsubscribe</button>
@@ -93,9 +123,9 @@ if (isset($_POST['unsub'])){
 	
 	<?php	
 	}?>	
-
-	
 </table>
+<?php
+} ?>
 
 
 </body>
