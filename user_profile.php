@@ -40,7 +40,10 @@
 	<input type="hidden" name="username" value="<?php echo $username;?>">
 	<input name="channels" type="submit" value="Channels">
 </form>
-
+<form action="getConversation.php" method="post" id="conversation">
+    <input type="hidden" name="recipient" value="<?php echo $username;?>">
+    <button type="submit" class="btn btn-default">Open Conversation</button>
+</form>
 
 <p>
 Name: <?php echo $first;?> <?php echo $last;?> <br>
